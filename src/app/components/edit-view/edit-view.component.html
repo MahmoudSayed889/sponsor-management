@@ -1,0 +1,252 @@
+
+
+<div class="store-sponsor d-flex justify-content-center align-items-center py-4">
+    <div class="container border rounded shadow-sm p-3">
+        <form (ngSubmit)="handleAdd(addSponsorForm)" [formGroup]="addSponsorForm">
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group mb-3">
+                        <label for="name" class="form-label">اسم الكفيل</label>
+                        <input type="text" class="form-control" id="name" formControlName="sponsor_name" [ngClass]="{'is-invalid': addSponsorForm.get('sponsor_name')?.errors && addSponsorForm.get('sponsor_name')?.touched}">
+                        
+                        @if ( addSponsorForm.get('sponsor_name')?.errors && addSponsorForm.get('sponsor_name')?.touched ) {
+
+                            @if( addSponsorForm.get('sponsor_name')?.getError('required') ) { <p class=" text-danger">هذا الحقل مطلوب</p> }
+                        }
+                        
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group mb-3">
+                        <label for="sponsorId" class="form-label">رقم تحقيق الشخصية</label>
+                        <input type="number" class="form-control" id="sponsorId" formControlName="sponsor_ID" [ngClass]="{'is-invalid': addSponsorForm.get('sponsor_ID')?.errors && addSponsorForm.get('sponsor_ID')?.touched || errorsReq.sponsor_ID}">
+
+                        @if ( addSponsorForm.get('sponsor_ID')?.errors && addSponsorForm.get('sponsor_ID')?.touched ) {
+
+                            @if( addSponsorForm.get('sponsor_ID')?.getError('required') ) { <p class=" text-danger">هذا الحقل مطلوب</p> }
+                        }
+
+                        @if(errorsReq.sponsor_ID) {
+
+                            <p class=" text-danger">{{errorsReq.sponsor_ID}}</p>
+                        }
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group mb-3">
+                        <label for="phone" class="form-label">رقم الهاتف</label>
+                        <input type="text" class="form-control" id="phone" formControlName="phone" [ngClass]="{'is-invalid': addSponsorForm.get('phone')?.errors && addSponsorForm.get('phone')?.touched}">
+
+                        @if ( addSponsorForm.get('phone')?.errors && addSponsorForm.get('phone')?.touched ) {
+
+                            @if( addSponsorForm.get('phone')?.getError('required') ) { <p class=" text-danger">هذا الحقل مطلوب</p> }
+                        }
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group mb-3">
+                        <label for="address" class="form-label">العنوان</label>
+                        <input type="text" class="form-control" id="address" formControlName="address" [ngClass]="{'is-invalid': addSponsorForm.get('address')?.errors && addSponsorForm.get('address')?.touched}">
+
+                        @if ( addSponsorForm.get('address')?.errors && addSponsorForm.get('address')?.touched ) {
+
+                            @if( addSponsorForm.get('address')?.getError('required') ) { <p class=" text-danger">هذا الحقل مطلوب</p> }
+                        }
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group mb-3">
+                        <label for="sponsorEmail" class="form-label">الايميل</label>
+                        <input type="email" class="form-control" id="sponsorEmail" formControlName="email" [ngClass]="{'is-invalid': addSponsorForm.get('email')?.errors && addSponsorForm.get('email')?.touched}">
+
+                        @if ( addSponsorForm.get('email')?.errors && addSponsorForm.get('email')?.touched ) {
+
+                            @if( addSponsorForm.get('email')?.getError('required') ) { <p class=" text-danger">هذا الحقل مطلوب</p> }
+                            @if( addSponsorForm.get('email')?.getError('email') ) { <p class=" text-danger">هذا الايميل غير صالح</p> }
+                        }
+
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group mb-3">
+                        <label for="code" class="form-label">الرقم البريدي</label>
+                        <input type="text" class="form-control" id="code" formControlName="postal_code" [ngClass]="{'is-invalid': addSponsorForm.get('postal_code')?.errors && addSponsorForm.get('postal_code')?.touched}">
+
+                        @if ( addSponsorForm.get('postal_code')?.errors && addSponsorForm.get('postal_code')?.touched ) {
+
+                            @if( addSponsorForm.get('postal_code')?.getError('required') ) { <p class=" text-danger">هذا الحقل مطلوب</p> }
+                        }
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group mb-3">
+                        <label for="maxLimit" class="form-label"> الحد الاقصى</label>
+                        <input type="number" class="form-control" id="maxLimit" formControlName="max_limit" [ngClass]="{'is-invalid': addSponsorForm.get('max_limit')?.errors && addSponsorForm.get('max_limit')?.touched}">
+
+                        @if ( addSponsorForm.get('max_limit')?.errors && addSponsorForm.get('max_limit')?.touched ) {
+
+                            @if( addSponsorForm.get('max_limit')?.getError('required') ) { <p class=" text-danger">هذا الحقل مطلوب</p> }
+                        }
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group mb-3">
+                        <label for="finLimit" class="form-label"> الحد المالي</label>
+                        <input type="number" class="form-control" id="finLimit" formControlName="financial_limit" [ngClass]="{'is-invalid': addSponsorForm.get('financial_limit')?.errors && addSponsorForm.get('financial_limit')?.touched}">
+
+                        @if ( addSponsorForm.get('financial_limit')?.errors && addSponsorForm.get('financial_limit')?.touched ) {
+
+                            @if( addSponsorForm.get('financial_limit')?.getError('required') ) { <p class=" text-danger">هذا الحقل مطلوب</p> }
+                        }
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="form-group mb-3">
+                        <label for="timeLimit" class="form-label">  المهلة الزمنية</label>
+                        <input type="number" class="form-control" id="timeLimit" formControlName="time_limit" [ngClass]="{'is-invalid': addSponsorForm.get('time_limit')?.errors && addSponsorForm.get('time_limit')?.touched}">
+
+                        @if ( addSponsorForm.get('time_limit')?.errors && addSponsorForm.get('time_limit')?.touched ) {
+
+                            @if( addSponsorForm.get('time_limit')?.getError('required') ) { <p class=" text-danger">هذا الحقل مطلوب</p> }
+                        }
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+
+                    <label class="form-check-label mb-2">نوع الكفيل</label>
+                    
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="sponsor_type" id="sponsorType1" value="normal" formControlName="sponsor_type" checked>
+                        <label class="form-check-label" for="sponsorType1">عادي</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="sponsor_type" id="sponsorType2" value="legal" formControlName="sponsor_type">
+                        <label class="form-check-label" for="sponsorType2">قانوني</label>
+                    </div>
+                </div>
+
+
+                <div>
+
+                    <h5 class=" fw-medium">الموظفون المكلفون بالاتصال</h5>
+
+                    <div formArrayName="sponsor_contact_officer">
+
+                        @for (control of controls; track control) {
+
+                            <div class="row mb-2 bg-light pt-3 m-auto" formGroupName="{{$index}}">
+                                <div class="col-md-4">
+                                    <div class="form-group mb-3">
+                                        <label for="officerName" class="form-label">الاسم </label>
+                                        <input type="text" class="form-control" id="officerName" formControlName="contact_officer_name" [ngClass]="{'is-invalid': control.get('contact_officer_name')?.errors && control.get('contact_officer_name')?.touched}">
+
+                                        @if ( control.get('contact_officer_name')?.errors && control.get('contact_officer_name')?.touched ) {
+
+                                            @if( control.get('contact_officer_name')?.getError('required') ) { <p class=" text-danger">هذا الحقل مطلوب</p> }
+                                        }
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group mb-3">
+                                        <label for="officerEmail" class="form-label">الايميل </label>
+                                        <input type="email" class="form-control" id="officerEmail" formControlName="email" [ngClass]="{'is-invalid': control.get('email')?.errors && control.get('email')?.touched || errorsReqDy.includes( 'sponsor_contact_officer.'+$index+'.email' )}">
+
+                                        @if ( control.get('email')?.errors && control.get('email')?.touched ) {
+
+                                            @if( control.get('email')?.getError('required') ) { <p class=" text-danger">هذا الحقل مطلوب</p> }
+                                            @if( control.get('email')?.getError('email') ) { <p class=" text-danger">هذا الايميل غير صالح</p> }
+                                        }
+
+                                        @if( errorsReqDy.includes( 'sponsor_contact_officer.'+$index+'.email' ) ) {
+
+                                            <p class=" text-danger">هذا الايميل مسجل مسبقاً</p>
+                                        }
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group mb-3">
+                                        <label for="officerPhone" class="form-label"> رقم الهاتف</label>
+                                        <input type="text" class="form-control" id="officerPhone" formControlName="phone" [ngClass]="{'is-invalid': control.get('phone')?.errors && control.get('phone')?.touched || errorsReqDy.includes( 'sponsor_contact_officer.'+$index+'.phone')}">
+
+                                        @if ( control.get('phone')?.errors && control.get('phone')?.touched ) {
+
+                                            @if( control.get('phone')?.getError('required') ) { <p class=" text-danger">هذا الحقل مطلوب</p> }
+
+                                        }
+
+                                        @if( errorsReqDy.includes( 'sponsor_contact_officer.'+$index+'.phone' ) ) {
+
+                                            <p class=" text-danger">هذا الرقم مسجل مسبقاً</p>
+                                        }
+                                    </div>
+                                </div>
+                                <div class="col-md-1 d-flex align-items-end">
+                                    <div class="form-group mb-3">
+                                        <button type="button" (click)="deleteOffiecer($index)" class="btn btn-danger">حذف</button>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                
+                    <div class="row mb-2 m-auto">
+                        <button type="button" (click)="addOffiecer()" class="btn btn-light border"> <i class="fa-solid fa-plus"></i> <span> اضافة موظف</span> </button>
+                    </div>
+
+
+                </div>
+                
+
+            </div>
+
+            
+            <div class=" d-flex justify-content-between align-items-center mt-3">
+                <button [disabled]=" addSponsorForm.invalid " type="submit" class="btn btn-primary ">
+                
+                    @if( !loading ) {
+                        <span>اضافة كفيل جديد</span>
+                    } @else {
+    
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        <span class="sr-only">Loading...</span>
+                    }
+                    
+                    
+    
+                </button>
+
+
+                @if( alertSuccess ) {
+                    <div class="toast align-items-center text-bg-success border-0 show" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="d-flex">
+                          <div class="toast-body">
+                            {{successReq?.message}}
+                          </div>
+                          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                    </div>
+                }
+                
+
+                <a [routerLink]="['/list-view']" routerLinkActive="router-link-active" class=" fw-bold"> عرض القائمة </a>
+            </div>
+            
+
+
+
+
+          </form>
+    </div>
+</div>
