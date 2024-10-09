@@ -6,10 +6,14 @@ This project was generated with
 - Node: 22.8.0
 - Package Manager: npm 10.8.2
 
-## install dependencies and run project
+## Install dependencies and run project
 use `npm i` to install all dependencies
 & use `ng s -o` to run project on your pc localhost
 
+
+## Libraries or frameworks
+- Bootstrap v5 Latest
+- Font Awesome v6 Latest
 
 ## Development server
 
