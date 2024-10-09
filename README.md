@@ -1,6 +1,15 @@
-# SponsorManagement
+### Hi there 👋
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.4.
+## Sponsor management project
+This project was generated with 
+- [Angular CLI](https://github.com/angular/angular-cli) version 18.1.4. and
+- Node: 22.8.0
+- Package Manager: npm 10.8.2
+
+## install dependencies and run project
+use `npm i` to install all dependencies
+use `ng s -o` to run project on your pc localhosrt
+
 
 ## Development server
 
