@@ -8,7 +8,7 @@ This project was generated with
 
 ## Install dependencies and run project
 use `npm i` to install all dependencies
-& use `ng s -o` to run project on your pc localhost
+& use `ng s -o` to run project on your pc
 
 
 ## Libraries or frameworks
